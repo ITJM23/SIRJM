@@ -95,34 +95,6 @@
             to { transform: translateX(0); opacity: 1; }
         }
     </style>
-
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-    (function(){
-        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS Public Key
-    })();
-
-    function sendEmail(event) {
-        event.preventDefault(); // Prevent form from reloading the page
-
-        var formData = {
-            to_email: "tolentinojohnmark999@gmail.com",
-            from_name: document.getElementById("name").value,
-            from_email: document.getElementById("email").value,
-            message: document.getElementById("message").value
-        };
-
-        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData)
-            .then(function(response) {
-                alert("Email sent successfully!");
-                document.getElementById("emailForm").reset();
-            }, function(error) {
-                alert("Failed to send email: " + JSON.stringify(error));
-            });
-    }
-</script>
-
-
 </head>
 <body>
     <button class="dark-mode-toggle" onclick="toggleDarkMode()"><i class="fa fa-moon"></i></button>
@@ -241,24 +213,8 @@
 <br>
             
             <section>
-                        <!--<h2 class="section-title">Contact</h2>
+                        <h2 class="section-title">Contact</h2>
                         <p class="contact-info"><i class="fa fa-envelope"></i> <a href="mailto:tolentinojohnmark999@gmail.com">tolentinojohnmark999@gmail.com</a></p>
-                        -->
-
-                        <h2>Contact Form</h2>
-                        <form id="emailForm" onsubmit="sendEmail(event)">
-                            <label>Name:</label><br>
-                            <input type="text" id="name" required><br><br>
-                            
-                            <label>Email:</label><br>
-                            <input type="email" id="email" required><br><br>
-                            
-                            <label>Message:</label><br>
-                            <textarea id="message" required></textarea><br><br>
-                            
-                            <button type="submit">Send Email</button>
-                        </form>
-
             </section>
     </div>
 
