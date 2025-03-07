@@ -181,8 +181,8 @@
                         <h2 class="section-title">My Skills</h2>
                         <div class="row">
                             <div class="col-md-6">
-                                <h3 class="sub-title">Programming & Development</h3>
-                                <ul class="list-group">
+                                <h3 class="sub-title" id="skill_header1">Programming & Development</h3>
+                                <ul class="list-group" id="skill_list1">
                                     <li class="list-group-item"><i class="fa fa-code"></i> PHP, JavaScript, Python, C#, HTML, CSS, Bootstrap, Kotlin</li>
                                     <li class="list-group-item"><i class="fa fa-robot"></i> AI Chatbot creation</li>
                                     <li class="list-group-item"><i class="fa fa-code"></i> Android App Development</li>
@@ -192,8 +192,8 @@
                                 </ul>
                             </div>
                             <div class="col-md-6">
-                                <h3 class="sub-title">IT & Infrastructure</h3>
-                                <ul class="list-group">
+                                <h3 class="sub-title" id="skill_header2">IT & Infrastructure</h3>
+                                <ul class="list-group" id="skill_list2">
                                     <li class="list-group-item"><i class="fa fa-windows"></i> Windows Server Management</li>
                                     <li class="list-group-item"><i class="fa fa-network-wired"></i> Network Configuration</li>
                                     <li class="list-group-item"><i class="fa fa-cloud"></i> Cloud Computing (AWS, Azure, Google Cloud)</li>
@@ -204,8 +204,8 @@
                         </div>
                         <div class="row mt-4">
                             <div class="col-md-6">
-                                <h3 class="sub-title">Data & Analytics</h3>
-                                <ul class="list-group">
+                                <h3 class="sub-title" id="skill_header3">Data & Analytics</h3>
+                                <ul class="list-group" id="skill_list3">
                                     <li class="list-group-item"><i class="fa fa-chart-bar"></i> Power BI Tools</li>
                                     <li class="list-group-item"><i class="fa fa-database"></i> Data Warehousing & ETL</li>
                                     <li class="list-group-item"><i class="fa fa-brain"></i> Machine Learning & AI Basics</li>
@@ -213,8 +213,8 @@
                                 </ul>
                             </div>
                             <div class="col-md-6">
-                                <h3 class="sub-title">Other Skills</h3>
-                                <ul class="list-group">
+                                <h3 class="sub-title" id="skill_header4">Other Skills</h3>
+                                <ul class="list-group" id="skill_list4">
                                     <li class="list-group-item"><i class="fa fa-user-cog"></i> IT Support & Troubleshooting</li>
                                     <li class="list-group-item"><i class="fa fa-globe"></i> Web Hosting & Domain Management</li>
                                     <li class="list-group-item"><i class="fa fa-globe"></i> SEO optimization</li>
@@ -240,60 +240,123 @@
         <p>© John Mark Tolentino</p>
     </div>
 
-
-    <!------------------------------------------------------ RESUME ------------------------------------------------------>
-    <!------------------------------------------------------ RESUME ----------------------------------------------------
-    <div id="RESUME_DIV" style="display: none;">
-
-        <script>
-            const resume_name = document.getElementById("resume_name").innerHTML;
-            const resume_header_title = document.getElementById("resume_header_title").innerHTML;
-            const resume_about_me = document.getElementById("resume_about_me").innerHTML;
-            const Work_Title_1 = document.getElementById("Work_Title_1").innerHTML;
-            const Work_Title_1_list = document.getElementById("Work_Title_1_list").innerHTML;
-            const Work_Title_2 = document.getElementById("Work_Title_2").innerHTML;
-            const Work_Title_2_list = document.getElementById("Work_Title_2_list").innerHTML;            
-            
-
-        </script>
-
-
-    </div>
-    ----------------------------------------------------- RESUME ------------------------------------------------------>
+    
+    <!---------------------------------------------------- RESUME ------------------------------------------------------>
     <!------------------------------------------------------ RESUME ------------------------------------------------------>
 
 
-    <div id="RESUME_DIV" style="display: none; padding: 20px; font-family: Arial, sans-serif; max-width: 800px;">
-        <h1 id="resume_name_placeholder"></h1>
-        <h3 id="resume_header_title_placeholder"></h3>
-    
-        <hr>
-    
-        <h2>About Me</h2>
-        <p id="resume_about_me_placeholder"></p>
-    
-        <hr>
-    
-        <h2>Work Experience</h2>
-    
-        <h3 id="Work_Title_1_placeholder"></h3>
-        <ul id="Work_Title_1_list_placeholder"></ul>
-    
-        <h3 id="Work_Title_2_placeholder"></h3>
-        <ul id="Work_Title_2_list_placeholder"></ul>
-    </div>
+<!---------------------------------------------------- RESUME ------------------------------------------------------>
+<!---------------------------------------------------- RESUME ------------------------------------------------------>
 
-    
+<style>
+    .page-break {
+        page-break-before: always;
+    }
+</style>
 
-    <!------------------------------------------------------ RESUME ------------------------------------------------------>
-    <!------------------------------------------------------ RESUME ------------------------------------------------------>
+<div id="RESUME_DIV" style="display: none; padding: 20px; font-family: Arial, sans-serif; max-width: 800px;">
+    <h1 id="resume_name_placeholder"></h1>
+    <h3 id="resume_header_title_placeholder"></h3>
+
+    <hr>
+
+    <h2>About Me</h2>
+    <p id="resume_about_me_placeholder"></p>
+
+    <hr>
+
+    <h2>Work Experience</h2>
+
+    <h3 id="Work_Title_2_placeholder"></h3>
+    <ul id="Work_Title_2_list_placeholder"></ul>
+
+    <h3 id="Work_Title_1_placeholder"></h3>
+    <ul id="Work_Title_1_list_placeholder"></ul>
+
+    <hr>
+
+    <div class="page-break"></div>
+
+    <h2>Skills</h2>
+
+    <h3 id="skill_header1_placeholder"></h3>
+    <ul id="skill_list1_placeholder"></ul>
+
+    <h3 id="skill_header2_placeholder"></h3>
+    <ul id="skill_list2_placeholder"></ul>
+
+    <h3 id="skill_header3_placeholder"></h3>
+    <ul id="skill_list3_placeholder"></ul>
+
+    <h3 id="skill_header4_placeholder"></h3>
+    <ul id="skill_list4_placeholder"></ul>
+</div>
+
+<script>
+    function populateResumeData() {
+        function copyContent(sourceId, targetId) {
+            const source = document.getElementById(sourceId);
+            const target = document.getElementById(targetId);
+            if (source && target) {
+                target.innerHTML = source.innerHTML;
+            }
+        }
+
+        copyContent("resume_name", "resume_name_placeholder");
+        copyContent("resume_header_title", "resume_header_title_placeholder");
+        copyContent("resume_about_me", "resume_about_me_placeholder");
+        copyContent("Work_Title_1", "Work_Title_1_placeholder");
+        copyContent("Work_Title_1_list", "Work_Title_1_list_placeholder");
+        copyContent("Work_Title_2", "Work_Title_2_placeholder");
+        copyContent("Work_Title_2_list", "Work_Title_2_list_placeholder");
+
+        copyContent("skill_header1", "skill_header1_placeholder");
+        copyContent("skill_list1", "skill_list1_placeholder");
+        copyContent("skill_header2", "skill_header2_placeholder");
+        copyContent("skill_list2", "skill_list2_placeholder");
+        copyContent("skill_header3", "skill_header3_placeholder");
+        copyContent("skill_list3", "skill_list3_placeholder");
+        copyContent("skill_header4", "skill_header4_placeholder");
+        copyContent("skill_list4", "skill_list4_placeholder");
+    }
+
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+
+    function generatePDF() {
+        populateResumeData();
+        const element = document.getElementById('RESUME_DIV');
+        element.style.display = "block";
+
+        setTimeout(() => {
+            html2pdf().from(element).set({
+                margin: 10,
+                filename: 'TOLENTINO_JOHNMARK.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            }).save().then(() => {
+                element.style.display = "none"; // Hide again after generating the PDF
+            });
+        }, 100);
+    }
+</script>
 
 
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+    </script>
 
+    <!------------------------------------------------------ RESUME ------------------------------------------------------>
+    <!------------------------------------------------------ RESUME ------------------------------------------------------>
+
+    <script>
     function populateResumeData() {
         document.getElementById("resume_name_placeholder").innerHTML = document.getElementById("resume_name").innerHTML;
         document.getElementById("resume_header_title_placeholder").innerHTML = document.getElementById("resume_header_title").innerHTML;
@@ -302,27 +365,19 @@
         document.getElementById("Work_Title_1_list_placeholder").innerHTML = document.getElementById("Work_Title_1_list").innerHTML;
         document.getElementById("Work_Title_2_placeholder").innerHTML = document.getElementById("Work_Title_2").innerHTML;
         document.getElementById("Work_Title_2_list_placeholder").innerHTML = document.getElementById("Work_Title_2_list").innerHTML;
+        document.getElementById("skill_header1").innerHTML = document.getElementById("skill_header1").innerHTML;
+        document.getElementById("skill_list1").innerHTML = document.getElementById("skill_list1").innerHTML;
+        document.getElementById("skill_header2").innerHTML = document.getElementById("skill_header2").innerHTML;
+        document.getElementById("skill_list2").innerHTML = document.getElementById("skill_list2").innerHTML;
+        document.getElementById("skill_header3").innerHTML = document.getElementById("skill_header3").innerHTML;
+        document.getElementById("skill_list3").innerHTML = document.getElementById("skill_list3").innerHTML;
+        document.getElementById("skill_header4").innerHTML = document.getElementById("skill_header4").innerHTML;
+        document.getElementById("skill_list4").innerHTML = document.getElementById("skill_list4").innerHTML;
     }
-
-        function generatePDF() {
-        populateResumeData();
-        const element = document.getElementById('RESUME_DIV');
-        element.style.display = "block"; // Make it visible before generating PDF
-        
-        setTimeout(() => {
-            html2pdf(element, {
-                margin: 10,
-                filename: 'TOLENTINO_JOHNMARK.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            }).then(() => {
-                element.style.display = "none"; // Hide it again after generating the PDF
-            });
-        }, 100); // Small delay to allow rendering
-    }
-
     </script>
+
+    <!------------------------------------------------------ RESUME ------------------------------------------------------>
+    <!------------------------------------------------------ RESUME ------------------------------------------------------>
 
     
 </body>
