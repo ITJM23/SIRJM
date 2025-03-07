@@ -254,43 +254,71 @@
     }
 </style>
 
-<div id="RESUME_DIV" style="display: none; padding: 20px; font-family: Arial, sans-serif; max-width: 800px;">
-    <h1 id="resume_name_placeholder"></h1>
-    <h3 id="resume_header_title_placeholder"></h3>
+<div id="RESUME_DIV" style="display: none; padding: 20px; font-family: Arial, sans-serif; max-width: 800px; line-height: 1.6;">
+    
+    <!-- Header Section -->
+    <header style="text-align: center; margin-bottom: 20px;">
+        <h1 id="resume_name_placeholder" style="margin-bottom: 5px;"></h1>
+        <h3 id="resume_header_title_placeholder" style="color: #555;"></h3>
+    </header>
 
     <hr>
 
-    <h2>About Me</h2>
-    <p id="resume_about_me_placeholder"></p>
+    <!-- About Me Section -->
+    <section>
+        <h2>About Me</h2>
+        <p id="resume_about_me_placeholder" style="text-align: justify;"></p>
+    </section>
 
     <hr>
 
-    <h2>Work Experience</h2>
+    <!-- Work Experience Section -->
+    <section>
+        <h2>Work Experience</h2>
 
-    <h3 id="Work_Title_2_placeholder"></h3>
-    <ul id="Work_Title_2_list_placeholder"></ul>
+        <div style="margin-bottom: 15px;">
+            <h3 id="Work_Title_2_placeholder"></h3>
+            <ul id="Work_Title_2_list_placeholder" style="padding-left: 20px;"></ul>
+        </div>
 
-    <h3 id="Work_Title_1_placeholder"></h3>
-    <ul id="Work_Title_1_list_placeholder"></ul>
+        <div>
+            <h3 id="Work_Title_1_placeholder"></h3>
+            <ul id="Work_Title_1_list_placeholder" style="padding-left: 20px;"></ul>
+        </div>
+    </section>
 
     <hr>
 
-    <div class="page-break"></div>
+    <!-- Page Break -->
+    <div class="page-break" style="page-break-before: always;"></div>
 
-    <h2>Skills</h2>
+    <!-- Skills Section -->
+    <section>
+        <h2>Skills</h2>
 
-    <h3 id="skill_header1_placeholder"></h3>
-    <ul id="skill_list1_placeholder"></ul>
+        <div>
+            <h3 id="skill_header1_placeholder"></h3>
+            <ul id="skill_list1_placeholder" style="padding-left: 20px;"></ul>
+        </div>
 
-    <h3 id="skill_header2_placeholder"></h3>
-    <ul id="skill_list2_placeholder"></ul>
+        <div>
+            <h3 id="skill_header2_placeholder"></h3>
+            <ul id="skill_list2_placeholder" style="padding-left: 20px;"></ul>
+        </div>
 
-    <h3 id="skill_header3_placeholder"></h3>
-    <ul id="skill_list3_placeholder"></ul>
+        <div>
+            <h3 id="skill_header3_placeholder"></h3>
+            <ul id="skill_list3_placeholder" style="padding-left: 20px;"></ul>
+        </div>
 
-    <h3 id="skill_header4_placeholder"></h3>
-    <ul id="skill_list4_placeholder"></ul>
+        <div>
+            <h3 id="skill_header4_placeholder"></h3>
+            <ul id="skill_list4_placeholder" style="padding-left: 20px;"></ul>
+        </div>
+    </section>
+
 </div>
+
 
 <script>
     function populateResumeData() {
@@ -356,25 +384,7 @@
     <!------------------------------------------------------ RESUME ------------------------------------------------------>
     <!------------------------------------------------------ RESUME ------------------------------------------------------>
 
-    <script>
-    function populateResumeData() {
-        document.getElementById("resume_name_placeholder").innerHTML = document.getElementById("resume_name").innerHTML;
-        document.getElementById("resume_header_title_placeholder").innerHTML = document.getElementById("resume_header_title").innerHTML;
-        document.getElementById("resume_about_me_placeholder").innerHTML = document.getElementById("resume_about_me").innerHTML;
-        document.getElementById("Work_Title_1_placeholder").innerHTML = document.getElementById("Work_Title_1").innerHTML;
-        document.getElementById("Work_Title_1_list_placeholder").innerHTML = document.getElementById("Work_Title_1_list").innerHTML;
-        document.getElementById("Work_Title_2_placeholder").innerHTML = document.getElementById("Work_Title_2").innerHTML;
-        document.getElementById("Work_Title_2_list_placeholder").innerHTML = document.getElementById("Work_Title_2_list").innerHTML;
-        document.getElementById("skill_header1").innerHTML = document.getElementById("skill_header1").innerHTML;
-        document.getElementById("skill_list1").innerHTML = document.getElementById("skill_list1").innerHTML;
-        document.getElementById("skill_header2").innerHTML = document.getElementById("skill_header2").innerHTML;
-        document.getElementById("skill_list2").innerHTML = document.getElementById("skill_list2").innerHTML;
-        document.getElementById("skill_header3").innerHTML = document.getElementById("skill_header3").innerHTML;
-        document.getElementById("skill_list3").innerHTML = document.getElementById("skill_list3").innerHTML;
-        document.getElementById("skill_header4").innerHTML = document.getElementById("skill_header4").innerHTML;
-        document.getElementById("skill_list4").innerHTML = document.getElementById("skill_list4").innerHTML;
-    }
-    </script>
+
 
     <!------------------------------------------------------ RESUME ------------------------------------------------------>
     <!------------------------------------------------------ RESUME ------------------------------------------------------>
