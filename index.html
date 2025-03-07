@@ -12,22 +12,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts (Optimized) -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
     <style>
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f8f9fa;
             color: #333;
+            overflow-x: hidden;
+            transition: all 0.3s ease-in-out;
         }
+        /* Header */
         .header {
             background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: white;
             padding: 60px 20px;
             text-align: center;
+            position: relative;
+            animation: fadeIn 1.5s ease-in-out;
         }
         .profile-img {
             width: 160px;
@@ -36,9 +39,21 @@
             object-fit: cover;
             margin-bottom: 10px;
             border: 5px solid white;
+            animation: bounceIn 1.5s;
         }
+        .social-icons a {
+            margin: 0 10px;
+            font-size: 24px;
+            color: white;
+            transition: transform 0.3s ease-in-out;
+        }
+        .social-icons a:hover {
+            color: #ffd700;
+            transform: scale(1.2);
+        }
+        /* Sections */
         .container {
-            margin-top: 20px;
+            margin-top: 50px;
             max-width: 900px;
         }
         .section-title {
@@ -46,71 +61,191 @@
             padding-left: 15px;
             margin-bottom: 25px;
             font-weight: 600;
+            animation: slideInLeft 1s ease-in-out;
         }
-        .export-btn {
-            display: block;
-            width: max-content;
-            margin: 20px auto;
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #28a745;
-            color: white;
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #121212;
+            color: #fff;
+        }
+        .dark-mode .header {
+            background: linear-gradient(135deg, #0f1e42, #1b3a79);
+        }
+        .dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ffcc00;
             border: none;
-            border-radius: 5px;
+            padding: 10px;
+            border-radius: 50%;
             cursor: pointer;
         }
-        .export-btn:hover {
-            background-color: #218838;
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
     </style>
-</head>
-<body>
-
-    <div class="header">
-        <img src="JMTOLENTINO.jpg" alt="John Mark Tolentino" class="profile-img">
-        <h1>John Mark Tolentino</h1>
-        <p>IT Specialist | Programmer</p>
-    </div>
-
-    <div class="container" id="resumeContent">
-        <section>
-            <h2 class="section-title">About Me</h2>
-            <p>Passionate IT Specialist and Programmer with expertise in full-stack development, cybersecurity, and IT infrastructure management.</p>
-        </section>
-
-        <section>
-            <h2 class="section-title">Work Experience</h2>
-            <p><strong>IT Specialist / Programmer - TSUKIDEN ELECTRIC</strong> (June 2023 - Present)</p>
-            <ul>
-                <li>Developed web and desktop applications using PHP, JavaScript, C#, and SQL.</li>
-                <li>Managed Windows Server and performed security updates.</li>
-                <li>Automated IT tasks to improve efficiency.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2 class="section-title">Skills</h2>
-            <ul>
-                <li>Programming: PHP, JavaScript, Python, C#, HTML, CSS, Bootstrap, Kotlin</li>
-                <li>IT Infrastructure: Windows Server, Networking, Cloud Computing</li>
-                <li>Data Analysis: Power BI, SQL, Data Warehousing</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2 class="section-title">Contact</h2>
-            <p>Email: <a href="mailto:tolentinojohnmark999@gmail.com">tolentinojohnmark999@gmail.com</a></p>
-        </section>
-    </div>
-
-    <button class="export-btn" onclick="exportToPDF()">Export to PDF</button>
 
     <script>
-        function exportToPDF() {
-            const element = document.getElementById('resumeContent');
-            html2pdf().from(element).save('John_Mark_Tolentino_Resume.pdf');
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="i_2jrWFRqfAXu_cDgbEs4";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    
+</head>
+<body>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()"><i class="fa fa-moon"></i></button>
+    
+    <div class="header">
+        <img src="JMTOLENTINO.jpg" alt="John Mark Tolentino" class="profile-img" loading="lazy">
+        <h1 class="mt-2">John Mark Tolentino</h1>
+        <p>IT Specialist | Programmer</p>
+        <div class="social-icons">
+            <a href="https://github.com/ITJM23" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/john-mark-tolentino-8757b0246/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/the.great.great.jm" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <section>
+            <h2 class="section-title">About Me</h2>
+            <p>Passionate IT Specialist and Programmer with expertise in full-stack development, cybersecurity, and IT infrastructure management. Dedicated to leveraging technology for innovation and efficiency.</p>
+        </section>
+
+        <section>
+                <h2 class="section-title">Work Experience</h2>
+                <div class="accordion" id="workExperienceAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#job1">
+                                IT Specialist / Programmer - TSUKIDEN ELECTRIC (June 2023 - Present)
+                            </button>
+                        </h2>
+                        <div id="job1" class="accordion-collapse collapse show" data-bs-parent="#workExperienceAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Developed and optimized in-house <strong>web-based</strong> and <strong>desktop applications</strong> using <strong>PHP, JavaScript, C#, and SQL</strong>.</li>
+                                    <li>Designed and maintained <strong>relational databases (SQL Server, MySQL)</strong>, ensuring data integrity and efficient query performance.</li>
+                                    <li>Managed <strong>Windows Server</strong>, performing regular updates, security patches.</li>
+                                    <li>Resolved <strong>network configuration issues</strong>.</li>
+                                    <li>Implemented <strong>automation scripts</strong> to improve IT operations and reduce manual workload.</li>
+                                    <li>Provided <strong>IT support</strong> for hardware, software, and infrastructure troubleshooting.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#job2">
+                                Web Developer / Administrator - MCC CONSULTING (May 2021 - Feb 2023)
+                            </button>
+                        </h2>
+                        <div id="job2" class="accordion-collapse collapse" data-bs-parent="#workExperienceAccordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Designed and developed <strong>responsive, SEO-optimized WordPress websites</strong> using <strong>HTML, CSS, Bootstrap, and JavaScript</strong>.</li>
+                                    <li>Configured and maintained <strong>web hosting environments</strong>, ensuring uptime and performance optimization.</li>
+                                    <li>Integrated <strong>SQL database solutions</strong> for dynamic content management and efficient data retrieval.</li>
+                                    <li>Implemented <strong>security best practices</strong>, including firewall configurations and SSL certificate management.</li>
+                                    <li>Managed <strong>Linux-based web servers</strong> and automated routine maintenance tasks.</li>
+                                    <li>Used <strong>data analytics tools (Google Analytics, Power BI)</strong> to monitor website traffic and improve UX.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <br>
+
+            <section>
+                        <h2 class="section-title">My Skills</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3 class="sub-title">Programming & Development</h3>
+                                <ul class="list-group">
+                                    <li class="list-group-item"><i class="fa fa-code"></i> PHP, JavaScript, Python, C#, HTML, CSS, Bootstrap, Kotlin</li>
+                                    <li class="list-group-item"><i class="fa fa-robot"></i> AI Chatbot creation</li>
+                                    <li class="list-group-item"><i class="fa fa-code"></i> Android App Development</li>
+
+                                    <li class="list-group-item"><i class="fa fa-database"></i> PowerShell Automation</li>
+                                    <li class="list-group-item"><i class="fa fa-database"></i> SQL/MySQL Database Administration</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="sub-title">IT & Infrastructure</h3>
+                                <ul class="list-group">
+                                    <li class="list-group-item"><i class="fa fa-windows"></i> Windows Server Management</li>
+                                    <li class="list-group-item"><i class="fa fa-network-wired"></i> Network Configuration</li>
+                                    <li class="list-group-item"><i class="fa fa-cloud"></i> Cloud Computing (AWS, Azure, Google Cloud)</li>
+                                    <li class="list-group-item"><i class="fa fa-terminal"></i> Linux Administration</li>
+                                    <li class="list-group-item"><i class="fa fa-key"></i> VPN Setup & Security</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <h3 class="sub-title">Data & Analytics</h3>
+                                <ul class="list-group">
+                                    <li class="list-group-item"><i class="fa fa-chart-bar"></i> Power BI Tools</li>
+                                    <li class="list-group-item"><i class="fa fa-database"></i> Data Warehousing & ETL</li>
+                                    <li class="list-group-item"><i class="fa fa-brain"></i> Machine Learning & AI Basics</li>
+                                    <li class="list-group-item"><i class="fa fa-file-excel"></i> Excel Automation & Data Analysis</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h3 class="sub-title">Other Skills</h3>
+                                <ul class="list-group">
+                                    <li class="list-group-item"><i class="fa fa-user-cog"></i> IT Support & Troubleshooting</li>
+                                    <li class="list-group-item"><i class="fa fa-globe"></i> Web Hosting & Domain Management</li>
+                                    <li class="list-group-item"><i class="fa fa-globe"></i> SEO optimization</li>
+                                    <li class="list-group-item"><i class="fa fa-pencil-ruler"></i> UI/UX Design Principles</li>
+                                    <li class="list-group-item"><i class="fa fa-project-diagram"></i> Project Management & Agile Methodologies</li>
+                                </ul>
+                            </div>
+                        </div>
+            </section>
+
+
+<br>
+            
+            <section>
+                        <h2 class="section-title">Contact</h2>
+                        <p class="contact-info"><i class="fa fa-envelope"></i> <a href="mailto:tolentinojohnmark999@gmail.com">tolentinojohnmark999@gmail.com</a></p>
+            </section>
+    </div>
+
+    <br>
+    
+    <div class="footer text-center p-3 bg-dark text-light mt-5">
+        <p>© John Mark Tolentino</p>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
         }
     </script>
+
+<button class="export-btn" onclick="exportToPDF()">Export to PDF</button>
+
+    <script>
+    function exportToPDF() {
+        const element = document.getElementById('resumeContent');
+        html2pdf().from(element).save('John_Mark_Tolentino_Resume.pdf');
+    }
+</script>
 
 </body>
 </html>
